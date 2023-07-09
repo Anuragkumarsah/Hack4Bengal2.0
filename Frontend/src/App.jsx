@@ -8,6 +8,7 @@ import Chat from "./components/Chat/Chat";
 import Braintumer from "./pages/Prediction/Braintumer";
 import Login from "./pages/Login/Login";
 import Pneumonia from "./pages/Prediction/Pneumonia";
+import Cancer from "./pages/Prediction/Cancer";
 
 function App() {
   return (
@@ -16,9 +17,10 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/prediction/Adeno" element={<Adeno />} />
+        <Route path="/prediction/adeno" element={<Adeno />} />
         <Route path="/prediction/brain-tumor" element={<Braintumer />} />
         <Route path="/prediction/pneumonia" element={<Pneumonia />} />
+        <Route path="/prediction/cancer" element={<Cancer />} />
         <Route path="/general/chat" element={<Chat />} />
       </Routes>
     </Router>

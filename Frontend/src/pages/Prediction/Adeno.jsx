@@ -72,8 +72,8 @@ function Adeno() {
     <div>
       <div className="chat_header_text">
         <h2>
-          AI Health Assistant for <span className="text-red-500">Cancer</span>{" "}
-          realated Queries
+          AI Health Assistant for{" "}
+          <span className="text-red-500">Carcinoma</span> realated Queries
         </h2>
         <p>
           <FontAwesomeIcon
