@@ -25,6 +25,8 @@ mongoose
   });
 
 const User = require("./Models/UsersModel");
+const Doctor = require("./Models/DoctorModel")
+const Appointment = require("./Models/AppointmentModel")
 
 // Routes
 app.get("/", (req, res) => {

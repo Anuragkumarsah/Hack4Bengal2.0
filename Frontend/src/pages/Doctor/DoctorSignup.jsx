@@ -126,7 +126,7 @@ const DoctorSignup = () => {
             const hashedPassword = await bcrypt.hash(password, 10);
             const specializationArray = convertSpecializations(specialization);
             await axios
-                .post(`http://localhost:3000/doctor/signup`, {
+                .post(`http://localhost:3001/doctor/signup`, {
                     username,
                     email,
                     phoneNumber,
@@ -141,7 +141,7 @@ const DoctorSignup = () => {
                     // Additional actions or redirection can be performed here
                     toast.success("Doctor created successfully!");
                     setTimeout(() => {
-                        navigate("/doctor/login");
+                        window.location.href="/doctor/login"
                     }, 2000);
                 })
                 .catch((error) => {
