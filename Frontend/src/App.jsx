@@ -11,6 +11,7 @@ import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home/Home'
 import Cancer from './pages/Prediction/Cancer'
 import Login from './pages/Login/Login'
+import Signup from './pages/Signup/Signup'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
       <Routes>
         <Route exact path='/' element={<Home />} />
         <Route path='/login' element={<Login/>} />
+        <Route path='/signup' element={<Signup/>} />
         <Route path="/prediction/cancer" element={<Cancer />} />
       </Routes>
     </Router>
