@@ -12,6 +12,7 @@ import Cancer from "./pages/Prediction/Cancer";
 import Signup from "./pages/Signup/Signup";
 import Footer from "./components/Footer/Footer";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
+import Appointment from "./pages/Appointment/Appointment";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/prediction/cancer" element={<Cancer />} />
         <Route path="/general/chat" element={<Chat />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/appointment" element={<Appointment/>} />
       </Routes>
       <Footer />
     </Router>
