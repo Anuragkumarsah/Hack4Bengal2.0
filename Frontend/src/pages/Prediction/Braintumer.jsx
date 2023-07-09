@@ -5,14 +5,14 @@ import "./prediction.css";
 import { Link } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
 import Progress_bar from "../../components/ProgressBar/ProgressBar";
-import videoSrc from "../../Videos/ctscan_video.mp4";
+import videoSrc from "../../Videos/brain-human-face.mp4";
+import Chat from "../../components/Chat/Chat";
 
 // Icon import
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
-import Chat from "../../components/Chat/Chat";
 
-function Cancer() {
+function Mri() {
   // fileupload & Result
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
@@ -30,6 +30,35 @@ function Cancer() {
     if (selectedFile != null) setLoading(true);
   }, [selectedFile]);
 
+  const uploadImg = async () => {
+    const formData = new FormData();
+    formData.append("image", selectedFile);
+    const config = {
+      onUploadProgress: (progressEvent) => {
+        const progress = Math.round(
+          (progressEvent.loaded / progressEvent.total) * 100
+        );
+        setUploadProgress(progress);
+      },
+    };
+
+    await axios
+      .post("http://localhost:8000/predict-mri", formData, config)
+      .then((response) => {
+        setResult(response.data);
+        setshowGive(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    if (selectedFile) {
+      uploadImg();
+    }
+  }, [selectedFile]);
+
   // Drag and Drop
   const onDrop = useCallback((acceptedFiles) => {
     setSelectedFile(acceptedFiles[0]);
@@ -44,8 +73,8 @@ function Cancer() {
     <div>
       <div className="chat_header_text">
         <h2>
-          AI Health Assistant for <span className="text-red-500">Cancer</span>{" "}
-          realated Queries
+          AI Health Assistant for{" "}
+          <span className="text-red-500">Brain Tumer</span> realated Queries
         </h2>
         <p>
           <FontAwesomeIcon
@@ -68,7 +97,7 @@ function Cancer() {
                 <video
                   preload="auto"
                   className="left-container-video w-full h-auto rounded-4xl max-w-[320px] lg:max-w-[420px]"
-                  poster="https://images.pexels.com/videos/7089596/pexels-photo-7089596.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  poster="https://i.vimeocdn.com/video/705159602-6253f49a7fc7d987ebb415d7e8801754ce272a8dcbe92b4ddf45b7189a82c047-d_640x360.jpg"
                   autoPlay
                   muted
                   playsInline
@@ -76,8 +105,8 @@ function Cancer() {
                 ></video>
                 <div className="flex flex-col gap-4">
                   <h1 className="font-display font-bold text-typo m-0 text-4xl md:text-5xl lg:text-6xl text-center md:!text-left">
-                    Detect <span className="text-orange-500">Carcinoma</span>
-                    <br /> CT-Scan image
+                    Detect <span className="text-orange-500">Brain Tumer</span>
+                    <br /> MRI image
                   </h1>
                   <p className="text-typo-tertiary font-bold text-xl m-0 !text-typo text-center md:!text-left">
                     100% Automatically and
@@ -126,8 +155,6 @@ function Cancer() {
             </div>
           </div>
         </div>
-
-        {/* Result Modal */}
         {result && showGive ? (
           <Modal
             show={showGive}
@@ -147,4 +174,19 @@ function Cancer() {
   );
 }
 
-export default Cancer;
+{
+  /* <div>
+      <h1>Image Upload App</h1>
+      <input type="file" accept="image/*" onChange={handleFileInputChange} />
+      <button onClick={handleUploadClick}>Upload</button>
+      {result && (
+        <div>
+          <h2>Result</h2>
+          <p>Predicted Class: {result.predicted_class}</p>
+          <p>Probability: {result.probability.toFixed(2)}%</p>
+        </div>
+      )}
+    </div> */
+}
+
+export default Mri;
