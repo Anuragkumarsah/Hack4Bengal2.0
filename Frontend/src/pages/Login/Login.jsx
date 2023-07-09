@@ -49,7 +49,6 @@ const Login = () => {
                 localStorage.setItem("doctor_ai_isDoc", "0");
                 // If the login request is successful, show a success toast message
                 toast.success("User logged in successfully!");
-                // Navigate to the profile page
                 window.location.href="/"
             } catch (error) {
                 console.log(error);

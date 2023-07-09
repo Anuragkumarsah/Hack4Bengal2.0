@@ -19,6 +19,7 @@ import {
     faCircleInfo,
     faCalendarPlus,
 } from "@fortawesome/free-solid-svg-icons";
+import { appointmentDetails, deleteAppointmentRoute, getUserDataRoute } from "../../Utils/APIRoutes";
 
 export default function ProfilePage() {
     const [userData, setUserData] = useState(null);
@@ -49,12 +50,12 @@ export default function ProfilePage() {
         try {
             //Appointment schema fetching
             const scheduleResult = await axios.get(
-                `http://localhost:3000/appointment/${id}`
+                appointmentDetails(id)
             );
             const userId = scheduleResult.data.appointment.clientId;
             const doctorId = scheduleResult.data.appointment.doctorId;
             const deleteAppointment = await axios.delete(
-                `http://localhost:3000/appointment/delete/${id}`,
+                deleteAppointmentRoute,
                 { data: { doctorId, userId } }
             );
             console.log(deleteAppointment.data);
@@ -87,7 +88,7 @@ export default function ProfilePage() {
 
     const fetchUserData = async (userId) => {
         try {
-            const response = await fetch(`http://localhost:3000/user/${userId}`);
+            const response = await fetch(getUserDataRoute(userId));
             const data = await response.json();
             if (response.ok) {
                 setUserData(data.user);
@@ -124,7 +125,7 @@ export default function ProfilePage() {
         try {
             // Perform save operation or API call with editedData
             const response = await fetch(
-                `http://localhost:3000/user/${userData._id}`,
+                `http://localhost:3001/user/${userData._id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -160,12 +161,12 @@ export default function ProfilePage() {
         try {
             setIsLoading(true);
             const response = await axios.get(
-                `http://localhost:3000/appointment/${appointmentId}`
+                `http://localhost:3001/appointment/${appointmentId}`
             );
             const appointment = response.data.appointment;
             const doctorId = appointment.doctorId;
             const doctorDetail = await axios.get(
-                `http://localhost:3000/doctor/details/${doctorId}`
+                `http://localhost:3001/doctor/details/${doctorId}`
             );
             const doc = doctorDetail.data;
             setSchedule((prev) => {
