@@ -9,6 +9,9 @@ import Braintumer from "./pages/Prediction/Braintumer";
 import Login from "./pages/Login/Login";
 import Pneumonia from "./pages/Prediction/Pneumonia";
 import Cancer from "./pages/Prediction/Cancer";
+import Signup from "./pages/Signup/Signup";
+import Footer from "./components/Footer/Footer";
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App() {
   return (
@@ -18,11 +21,14 @@ function App() {
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/prediction/adeno" element={<Adeno />} />
+        <Route path="/signup" element={<Signup />} />
         <Route path="/prediction/brain-tumor" element={<Braintumer />} />
         <Route path="/prediction/pneumonia" element={<Pneumonia />} />
         <Route path="/prediction/cancer" element={<Cancer />} />
         <Route path="/general/chat" element={<Chat />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Routes>
+      <Footer />
     </Router>
   );
 }
