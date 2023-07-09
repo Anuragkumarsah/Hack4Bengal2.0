@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { faTriangleExclamation,faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 
 function Chat() {
   const [input, setInput] = useState();
@@ -13,6 +13,7 @@ function Chat() {
   const [selectModel, setSelectmodel] = useState(null);
   const [model, setModel] = useState([]);
   const count = useRef("");
+  const textRef = useRef(null);
   //   const handelSumbit = async (e) => {
   //     e.preventDefault();
   //     const chatLog = [...chats, { user: "me", chat: input }];
@@ -81,6 +82,12 @@ function Chat() {
       handelSumbit(e);
     }
   };
+
+  const adjustHeight = () => {
+    const element = textRef.current;
+    element.style.height = "auto";
+    element.style.height = element.scrollHeight + "px";
+  }
 
   return (
     <div className="chat_container">
@@ -187,17 +194,20 @@ function Chat() {
               )}
           </div>
           <div className="chatBox">
-            <form onSubmit={handelSumbit}>
+            <div className="chatInput">
               <textarea
-                placeholder="Type a message and Hit Enter..."
+                placeholder="Type your question here..."
                 type="text"
                 value={input}
                 className="inField"
                 onChange={(e) => setInput(e.target.value)}
                 rows="1"
+                ref={textRef}
+                onInput={adjustHeight}
                 onKeyDown={onPressEnter}
               />
-            </form>
+              <button onClick={(e) => handelSumbit(e)}><FontAwesomeIcon className="send_icon" icon={faPaperPlane} /></button>
+              </div>
           </div>
         </section>
       </div>
