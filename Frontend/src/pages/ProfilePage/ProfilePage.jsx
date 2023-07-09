@@ -57,11 +57,12 @@ export default function ProfilePage() {
             );
             const userId = scheduleResult.data.appointment.clientId;
             const doctorId = scheduleResult.data.appointment.doctorId;
+
+            // console.log(userId, doctorId)
             const deleteAppointment = await axios.delete(
-                deleteAppointmentRoute,
+                deleteAppointmentRoute(id),
                 { data: { doctorId, userId } }
             );
-            console.log(deleteAppointment.data);
             if (deleteAppointment.data.success) {
                 toast.success(deleteAppointment.data.message);
                 setSchedule([]);
