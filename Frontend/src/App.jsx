@@ -8,6 +8,7 @@ import {
 }
   from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar'
+import Home from './pages/Home/Home'
 import Cancer from './pages/Prediction/Cancer'
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
   return (
     <Router>
       <Navbar />
+      <Home />
       <Routes>
         <Route path="/prediction/cancer" element={<Cancer />} />
       </Routes>

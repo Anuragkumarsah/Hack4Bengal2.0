@@ -3,13 +3,13 @@ import "./Home.css";
 import { Link } from "react-router-dom";
 
 
-import FAQSection from "../components/FAQSection";
+import FAQSection from "./../../components/FAQSection/FAQSection.jsx";
 
 
-import faqData from "../assets/json-data/faqData.json";
+import faqData from "./../../assets/json-data/faqData.json";
 
 
-import services_menu from "../assets/json-data/services_menu.json";
+import services_menu from "./../../assets/json-data/services_menu.json";
 
 
 

@@ -1,0 +1,14 @@
+[
+    {
+        "question": "What is Doctor.AI ?",
+        "answer": "Doctor.AI is a chatbot that can help you with your medical queries. It can also help you to book a appointment with India's Top Doctors."
+    },
+    {
+        "question": "How can I use Doctor.AI ?",
+        "answer": "You can use Doctor.AI by clicking on the services menu on top navigation bar, and choose your what disease you want to detect. Then you can upload your report image on the redirected page and get your respective output."
+    },
+    {
+        "question": "How can I book a appointment with a doctor ?",
+        "answer": "You can book a appointment with a doctor by clicking on the Make Appointment button, select the time, date and a doctor whom you want, to diagnose you. Then finally select Book Appointment button to book your appointment."
+    }
+]
