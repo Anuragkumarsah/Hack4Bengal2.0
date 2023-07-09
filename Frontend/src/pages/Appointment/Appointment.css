@@ -1,0 +1,205 @@
+.appointment_container {
+    margin: 10px clamp(1rem, 5vw, 4rem);
+}
+
+.main_heading {
+    font-size: clamp(2rem, calc(6vw - 12px), 3rem);
+    font-weight: 600;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.top__section {
+    display: flex;
+    /* flex: auto; */
+    max-width: 100%;
+    white-space: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.top__section>button {
+    background-color: #0a6ebd;
+    color: #fff;
+    padding: clamp(0.5rem, 3vw, 0.8rem) clamp(1rem, 3vw, 1.5rem);
+    border: 2px solid #0a6ebd;
+    outline: none;
+    border-radius: 10px;
+    font-size: clamp(0.8rem, calc(3vw - 6px), 1.2rem);
+    /* font-weight: thin; */
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.top__section>button:hover {
+    color: #0a6ebd;
+    background-color: #fff;
+}
+
+.user_container {
+    display: flex;
+    gap: 10px;
+    position: relative;
+    margin-top: 20px;
+    align-items: center;
+}
+
+.user_container>img {
+    width: 8rem;
+    border-radius: 100%;
+    margin: 3px;
+}
+
+.user_container>h2 {
+    font-size: clamp(1rem, calc(3vw - 6px), 3rem);
+    font-weight: thin;
+}
+
+.user_dob {
+    font-size: clamp(0.8rem, calc(3vw - 6px), 1rem);
+}
+
+.book_time_container {
+    display: flex;
+    position: relative;
+    justify-items: center;
+    align-items: center;
+    /* max-width: calc(100vw - clamp(1rem, 5vw, 4rem)) !important; */
+    /* overflow-y: hidden;
+      overflow-x: scroll; */
+}
+
+.book_time_container>p {
+    max-width: 30%;
+    font-size: clamp(0.8rem, calc(3vw - 6px), 1.5rem) !important;
+    white-space: wrap;
+    font-weight: bold;
+    color: #000;
+    border-right: 1px solid #555;
+    margin: 10px;
+    padding: 10px;
+}
+
+.book_time {
+    /* display: block !important; */
+    width: 70%;
+}
+
+.book_time>input {
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid #666;
+    border-radius: 10px;
+}
+
+.book_time>textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #666;
+    border-radius: 10px;
+}
+
+.book_time>label {
+    margin-top: 15px;
+    font-size: clamp(1rem, calc(3vw - 6px), 1.4rem);
+    font-weight: 500;
+}
+
+/* DOCTOR DETAILS */
+
+.card-container {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+}
+
+.main_chat::-webkit-scrollbar {
+    width: 0;
+}
+
+.card-container::-webkit-scrollbar {
+    height: 5px;
+}
+
+.card-container::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    background-color: rgba(58, 58, 59, 0.81);
+}
+
+.doctor-card {
+    display: flex;
+    flex: 1 0 clamp(250px, 20vw, 400px);
+    cursor: pointer;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 0 clamp(10px, 6vw, 20px) 20px 0;
+}
+
+.doctor-card.selected {
+    border: 2px solid #0a6ebd;
+    color: #0a6ebd;
+}
+
+.doctor-image {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.round-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.doctor-details {
+    text-align: center;
+    white-space: wrap;
+}
+
+.specialization {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.doctorContainer {
+    margin: 0 10px;
+
+    cursor: pointer;
+}
+
+.specialization-container {
+    margin-left: 5px;
+}
+
+.specialization-item {
+    padding: 3px 5px;
+    background-color: #61ace4;
+    margin: 0 3px;
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.select-item {
+    background-color: rgba(49, 198, 0, 0.644);
+    height: fit-content;
+    padding: 3px 4px;
+    border-radius: 5px;
+}
+
+.selected {
+    -webkit-box-shadow: -10px 11px 5px 0px rgba(181, 181, 181, 1) !important;
+    -moz-box-shadow: -10px 11px 5px 0px rgba(181, 181, 181, 1);
+    box-shadow: -10px 11px 5px 0px rgba(181, 181, 181, 1) !important;
+    background-color: #e1e1e1;
+}

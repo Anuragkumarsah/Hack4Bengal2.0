@@ -1,0 +1,229 @@
+.image {
+    height: 50rem;
+    width: auto;
+    /* padding-top: 1rem; */
+}
+
+.signup-page {
+    display: flex;
+    align-items: center;
+}
+
+.left-section {
+    flex: 1;
+}
+
+.right-section {
+    flex: 1;
+    margin: 6rem;
+    /* Add spacing between the sections if desired */
+    margin-top: 2rem;
+    padding: 1rem 6rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.15),
+      0 8px 25px rgba(0, 0, 0, 0.2); */
+    transition: box-shadow 0.3s ease-in-out;
+    /* background-image: linear-gradient(#7fbbec66, white); */
+    border-radius: 22px;
+}
+
+.right-section:hover {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.45);
+}
+
+.right-section form label {
+    display: block;
+}
+
+.right-section h1 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: "Belanosima", sans-serif;
+}
+
+.right-section h1 span {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 2rem;
+    text-align: center;
+    margin-top: 1rem;
+    font-family: "Belanosima", sans-serif;
+    color: #007bff;
+}
+
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.submit-btn {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.submit-btn {
+    background-color: #0a6ebd;
+    color: #fff;
+    padding: 0.4rem 2rem;
+    border: 2px solid #0a6ebd;
+    outline: none;
+    border-radius: 20px;
+    font-size: 1rem;
+    /* font-weight: thin; */
+    cursor: pointer;
+    transition: background-color 0.5s ease-in-out;
+}
+
+.already-account {
+    /* margin-top: 20px; */
+    text-align: center;
+    font-size: small;
+}
+
+.already-account a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.already-account a:hover {
+    text-decoration: underline;
+}
+
+.form-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    margin-bottom: 5px;
+}
+
+.already-account a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.already-account a:hover {
+    text-decoration: underline;
+}
+
+.form-input {
+    display: block;
+    border: 1px solid black !important;
+    border-radius: 0.375rem;
+    /* Use the desired border radius value */
+    padding: 0.625rem 1.5rem;
+    /* Use the desired padding values */
+    width: 100%;
+    font-size: 1rem;
+    /* Use the desired font size */
+    color: rgb(0, 0, 0);
+    background-color: white;
+    /* Use the desired background color */
+    appearance: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.name-number {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+}
+
+.name-number input {
+    width: 100%;
+    margin-right: 10rem;
+}
+
+.toast-container {
+    bottom: 0;
+    right: 0;
+}
+
+.password-requirements {
+    display: block;
+    font-size: 0.65rem;
+    color: red;
+}
+
+.label {
+    font-size: 1rem;
+    font-size: small;
+    font-weight: bold;
+    font-family: revert;
+}
+
+@media (max-width: 768px) {
+    .signup-page {
+        flex-direction: column;
+    }
+
+    .left-section {
+        margin-bottom: 2rem;
+    }
+
+    .right-section {
+        padding: 1rem;
+    }
+}
+
+/* CSS for the animated input fields */
+.label {
+    position: relative !important;
+    display: block !important;
+}
+
+.label input {
+    width: 100% !important;
+    padding: 0.5rem !important;
+    border: none !important;
+    margin-top: 0.35rem;
+    border-bottom: 1px solid #474747 !important;
+    transition: border-color 0.3s ease !important;
+    background-color: rgba(218, 218, 218, 0.236);
+    border-radius: 0.6rem;
+}
+
+.label::after {
+    content: "" !important;
+    position: absolute !important;
+    bottom: -2px !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 2px !important;
+    background-color: #68a5d6 !important;
+    transform: scaleX(0) !important;
+    transition: transform 0.3s ease !important;
+}
+
+.label input:focus {
+    outline: none !important;
+    border-color: #68a5d6 !important;
+}
+
+.label input:focus+ ::after {
+    transform: scaleX(1) !important;
+}
+
+/* CSS for the animation on form submission */
+.form-footer .action_btn {
+    transition: transform 0.3s ease !important;
+}
+
+.form-footer .action_btn:hover {
+    transform: scale(1.1) !important;
+}

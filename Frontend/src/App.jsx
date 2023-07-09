@@ -13,6 +13,7 @@ import Signup from "./pages/Signup/Signup";
 import Footer from "./components/Footer/Footer";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import Appointment from "./pages/Appointment/Appointment";
+import DoctorLogin from "./pages/Doctor/DoctorLogin";
 
 function App() {
   return (
@@ -29,6 +30,8 @@ function App() {
         <Route path="/general/chat" element={<Chat />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/appointment" element={<Appointment/>} />
+        <Route path="/doctor/login" element={<DoctorLogin/>} />
+        {/* <Route path="/doctor/signup" element={<DoctorSignup/>} /> */}
       </Routes>
       <Footer />
     </Router>

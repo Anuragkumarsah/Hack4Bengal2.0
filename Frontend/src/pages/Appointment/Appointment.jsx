@@ -10,6 +10,7 @@ import "../Appointment/Appointment.css";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { doctorDetailsRoute, appointmentRoute } from '../../Utils/APIRoutes'
+import profileImage from "../../assets/Images/profile.png"
 
 const Appointment = () => {
     const dateInputRef = useRef(null);
@@ -134,7 +135,7 @@ const Appointment = () => {
             <div className="top__section">
                 {userData && (
                     <div className="user_container">
-                        <img src="/Image/profile.png" alt="image" />
+                        <img src={profileImage} alt="image" />
                         <h2>
                             {userData.username} <br />{" "}
                             <span className="user_dob">
