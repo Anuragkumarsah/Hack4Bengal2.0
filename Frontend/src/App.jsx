@@ -14,6 +14,8 @@ import Footer from "./components/Footer/Footer";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 import Appointment from "./pages/Appointment/Appointment";
 import DoctorLogin from "./pages/Doctor/DoctorLogin";
+import DoctorSignup from "./pages/Doctor/DoctorSignup";
+import DoctorDashboard from "./pages/Doctor/DoctorDashboard";
 
 function App() {
   return (
@@ -31,7 +33,8 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/appointment" element={<Appointment/>} />
         <Route path="/doctor/login" element={<DoctorLogin/>} />
-        {/* <Route path="/doctor/signup" element={<DoctorSignup/>} /> */}
+        <Route path="/doctor/signup" element={<DoctorSignup/>} />
+        <Route path="/doctor/dashboard" element={<DoctorDashboard/>} />
       </Routes>
       <Footer />
     </Router>
