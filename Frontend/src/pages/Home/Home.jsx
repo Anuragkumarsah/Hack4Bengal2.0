@@ -10,8 +10,9 @@ import faqData from "./../../assets/json-data/faqData.json";
 
 
 import services_menu from "./../../assets/json-data/services_menu.json";
-
-
+import heroImage from "./../../assets/Images/doctor-hero.svg"
+import waveImg from "./../../assets/Images/wave.svg";
+import gif from "./../../assets/Images/doctor-application.gif";
 
 const Home = () => {
   return (
@@ -21,7 +22,7 @@ const Home = () => {
         <div className="topBody_container">
           {/* hero section */}
           <div className="topBody">
-            <img src="" alt="" />
+            <img src={heroImage} alt="" />
             <div className="hero-text">
               <h1>Empowering Healthcare through Artificial Intelligence</h1>
               <p>
@@ -33,15 +34,17 @@ const Home = () => {
               </Link>
             </div>
           </div>
-          <img className="wave-img" src="" alt="" />
+          <img className="wave-img" src={waveImg} alt="" />
         </div>
         {/* Models Section */}
         <div className="modelSection">
           {/* Models */}
+          <div>
           <p>
             <span>Health At Your FingerTips.</span> <br /> Check your health
             with our latest AI Technology
           </p>
+          <img src={gif} className="gifimg" /></div>
           <div className="models">
             {services_menu.items.map((item, index) => {
               if (index !== services_menu.items.length - 1) {

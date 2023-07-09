@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
@@ -5,13 +6,15 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Cancer from "./pages/Prediction/Cancer";
 import Chat from "./components/Chat/Chat";
+import Login from './pages/Login/Login'
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route exact path='/' element={<Home />} />
+        <Route path='/login' element={<Login/>} />
         <Route path="/prediction/cancer" element={<Cancer />} />
         <Route path="/general/chat" element={<Chat />} />
       </Routes>
