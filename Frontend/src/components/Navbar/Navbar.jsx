@@ -9,10 +9,10 @@ import {
     faBrain,
 } from "@fortawesome/free-solid-svg-icons";
 import React, { useEffect, useRef, useState } from "react";
-import "../css/Navbar.css";
+import "../Navbar/Navbar.css";
 import { Link } from "react-router-dom";
-import services_menu from "../assets/json-data/services_menu.json";
-import logo from "/public/Image/doctorai_logo.svg";
+import services_menu from "../../assets/json-data/services_menu.json";
+import logo from "../../assets/Images/doctorai_logo.svg";
 
 // img
 
