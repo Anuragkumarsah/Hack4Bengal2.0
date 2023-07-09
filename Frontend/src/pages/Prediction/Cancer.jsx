@@ -5,12 +5,12 @@ import "./prediction.css";
 import { Link } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
 import Progress_bar from "../../components/ProgressBar/ProgressBar";
-import videoSrc from "../../Videos/ctscan_video.mp4";
+import videoSrc from "../../Videos/xray_video.mp4";
+import Chat from "../../components/Chat/Chat";
 
 // Icon import
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
-import Chat from "../../components/Chat/Chat";
 
 function Cancer() {
   // fileupload & Result
@@ -28,6 +28,35 @@ function Cancer() {
   };
   useEffect(() => {
     if (selectedFile != null) setLoading(true);
+  }, [selectedFile]);
+
+  const uploadImg = async () => {
+    const formData = new FormData();
+    formData.append("image", selectedFile);
+    const config = {
+      onUploadProgress: (progressEvent) => {
+        const progress = Math.round(
+          (progressEvent.loaded / progressEvent.total) * 100
+        );
+        setUploadProgress(progress);
+      },
+    };
+
+    await axios
+      .post("http://localhost:8000/cancer-prediction", formData, config)
+      .then((response) => {
+        setResult(response.data);
+        setshowGive(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+
+  useEffect(() => {
+    if (selectedFile) {
+      uploadImg();
+    }
   }, [selectedFile]);
 
   // Drag and Drop
@@ -68,7 +97,7 @@ function Cancer() {
                 <video
                   preload="auto"
                   className="left-container-video w-full h-auto rounded-4xl max-w-[320px] lg:max-w-[420px]"
-                  poster="https://images.pexels.com/videos/7089596/pexels-photo-7089596.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  // poster="https://images.pexels.com/videos/7089596/pexels-photo-7089596.jpeg?auto=compress&cs=tinysrgb&w=600"
                   autoPlay
                   muted
                   playsInline
@@ -76,8 +105,8 @@ function Cancer() {
                 ></video>
                 <div className="flex flex-col gap-4">
                   <h1 className="font-display font-bold text-typo m-0 text-4xl md:text-5xl lg:text-6xl text-center md:!text-left">
-                    Detect <span className="text-orange-500">Carcinoma</span>
-                    <br /> CT-Scan image
+                    Detect <span className="text-orange-500">Cancer</span>
+                    <br /> with CT SCAN Image
                   </h1>
                   <p className="text-typo-tertiary font-bold text-xl m-0 !text-typo text-center md:!text-left">
                     100% Automatically and
@@ -100,12 +129,12 @@ function Cancer() {
                       <button type="button" className="upload-btn">
                         Upload Image
                       </button>
-                      <div className="hidden sm:flex flex-col gap-1.5">
+                      <div className="hidden sm:flex flex-col gap-1.5 text-center">
                         <p className="m-0 font-bold text-xl text-typo-secondary">
                           or drop a file,
                         </p>
                         <span className="text-xs text-typo-secondary text-center">
-                          Paste Image and Wait
+                          Upload Your Image and Wait
                         </span>
                       </div>
                     </div>
@@ -132,7 +161,6 @@ function Cancer() {
           <Modal
             show={showGive}
             onClose={handelClose}
-            img="Image/modelBanner.jpg"
             bigText={`${result.predicted_class}`}
             smallText="We recommend you to make a appointment with doctor"
             percentage={`${Math.round(result.probability)}`}
