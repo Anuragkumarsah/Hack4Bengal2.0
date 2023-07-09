@@ -10,14 +10,16 @@ import {
 import Navbar from './components/Navbar/Navbar'
 import Home from './pages/Home/Home'
 import Cancer from './pages/Prediction/Cancer'
+import Login from './pages/Login/Login'
 
 function App() {
 
   return (
     <Router>
       <Navbar />
-      <Home />
       <Routes>
+        <Route exact path='/' element={<Home />} />
+        <Route path='/login' element={<Login/>} />
         <Route path="/prediction/cancer" element={<Cancer />} />
       </Routes>
     </Router>
