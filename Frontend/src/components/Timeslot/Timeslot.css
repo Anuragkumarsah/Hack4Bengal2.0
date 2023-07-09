@@ -1,0 +1,56 @@
+.time-slot-container {
+    /* max-width: 100%; */
+    display: block;
+}
+
+.time-slot-container>h2,
+.time-slot-container>p {
+    font-size: clamp(1rem, calc(3vw - 6px), 1.4rem);
+    font-weight: 500;
+}
+
+.time-slot-container>p {
+    margin: 10px 0;
+}
+
+.time-slot-container>p>span {
+    border: 2px solid #666;
+    padding: 3px;
+    border-radius: 10px;
+}
+
+.time-slot-list {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    padding: 15px 0;
+    scrollbar-color: rgba(58, 58, 59, 0.81);
+}
+
+.time-slot {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.4s ease-in-out;
+}
+
+.time-slot-list::-webkit-scrollbar {
+    height: 5px;
+}
+
+.time-slot-list::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+.time-slot-list::-webkit-scrollbar-thumb {
+    background-color: rgba(58, 58, 59, 0.81);
+}
+
+.time-slot.selected {
+    background-color: #0a6ebd;
+    color: #fff;
+}
