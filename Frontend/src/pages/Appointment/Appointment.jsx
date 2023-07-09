@@ -11,6 +11,7 @@ import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
 import { doctorDetailsRoute, appointmentRoute } from '../../Utils/APIRoutes'
 import profileImage from "../../assets/Images/profile.png"
+import doctorImage from "../../assets/Images/doctor.png"
 
 const Appointment = () => {
     const dateInputRef = useRef(null);
@@ -79,7 +80,7 @@ const Appointment = () => {
 
     const fetchUserData = async (userId) => {
         try {
-            const response = await fetch(`http://localhost:3000/user/${userId}`);
+            const response = await fetch(`http://localhost:3001/user/${userId}`);
             const data = await response.json();
             if (response.ok) {
                 setUserData(data.user);
@@ -109,7 +110,7 @@ const Appointment = () => {
         }
 
         try {
-            const response = await axios.post(appointmentRoute, {
+            const response = await axios.post(`http://localhost:3001/appointment`, {
                 doctorId: doctorID,
                 clientId: userID,
                 timeOfAppointment: time,
@@ -184,7 +185,7 @@ const Appointment = () => {
                                         <div className="user-info">
                                             <div className="user-info__img">
                                                 <img
-                                                    src="/Image/doctor.png"
+                                                    src={doctorImage}
                                                     alt="doctor Img"
                                                     width="30"
                                                 />

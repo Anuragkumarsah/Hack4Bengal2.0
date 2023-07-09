@@ -17,6 +17,7 @@ import {
     faPenToSquare,
     faFloppyDisk,
 } from "@fortawesome/free-solid-svg-icons";
+import profileImage from '../../assets/Images/doctor.png'
 
 export default function DoctorDashboard() {
     const [userData, setUserData] = useState(null);
@@ -61,7 +62,7 @@ export default function DoctorDashboard() {
     const fetchDoctorData = async (userId) => {
         try {
             const response = await axios.get(
-                `http://localhost:3000/doctor/details/${userId}`
+                `http://localhost:3001/doctor/details/${userId}`
             );
             setUserData(response.data);
             // console.log(response.data);
@@ -88,7 +89,7 @@ export default function DoctorDashboard() {
         try {
             // Perform save operation or API call with editedData
             const response = await fetch(
-                `http://localhost:3000/user/${userData._id}`,
+                `http://localhost:3001/user/${userData._id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -124,7 +125,7 @@ export default function DoctorDashboard() {
         try {
             setIsLoading(true);
             const response = await axios.get(
-                `http://localhost:3000/appointment/${appointmentId}`
+                `http://localhost:3001/appointment/${appointmentId}`
             );
             const appointment = response.data.appointment;
             const clientId = appointment.clientId;
@@ -180,7 +181,7 @@ export default function DoctorDashboard() {
         <div className="profile-main">
             <aside className="profile-left-panel">
                 <div className="pbtn active profile">
-                    <img src="/Image/doctor.png" alt="profile" />
+                    <img src={profileImage} alt="profile" />
                     <div className="name">
                         <p>
                             {isEditMode

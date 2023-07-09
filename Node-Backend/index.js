@@ -25,6 +25,8 @@ mongoose
   });
 
 const User = require("./Models/UsersModel");
+const Doctor = require("./Models/DoctorModel")
+const Appointment = require("./Models/AppointmentModel")
 
 // Routes
 app.get("/", (req, res) => {
@@ -187,6 +189,26 @@ app.delete("/appointment/delete/:id", async (req, res) => {
   }
 });
 
+const generateMeetingCode = () => {
+  const characters = "abcdefghijklmnopqrstuvwxyz";
+  let code = "";
+
+  for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+      const randomChar = characters.charAt(
+        Math.floor(Math.random() * characters.length)
+      );
+      code += randomChar;
+    }
+
+    if (i < 2) {
+      code += "-";
+    }
+  }
+
+  return code;
+};
+
 app.post("/appointment", async (req, res) => {
   console.log("This is appointment page backend");
   const { doctorId, clientId, timeOfAppointment, dateOfAppointment, about } =
@@ -220,7 +242,6 @@ app.post("/appointment", async (req, res) => {
     }
     doctor.schedule.push(appointmentId);
     await doctor.save();
-
     // Send a success response
     res.status(200).json({ message: "Appointment created successfully" });
   } catch (err) {

@@ -21,6 +21,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { appointmentDetails, deleteAppointmentRoute, getUserDataRoute } from "../../Utils/APIRoutes";
 
+
+import doctorPng from "../../assets/Images/doctor.png"
+
 export default function ProfilePage() {
     const [userData, setUserData] = useState(null);
     const [isEditMode, setIsEditMode] = useState(false);
@@ -356,7 +359,7 @@ export default function ProfilePage() {
                                                     <div className="user-info">
                                                         <div className="user-info__img">
                                                             <img
-                                                                src="/Image/doctor.png"
+                                                                src={doctorPng}
                                                                 alt="doctor Img"
                                                                 width="30"
                                                             />

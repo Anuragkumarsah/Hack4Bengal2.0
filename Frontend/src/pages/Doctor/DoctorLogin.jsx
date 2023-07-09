@@ -31,7 +31,7 @@ const DoctorLogin = () => {
             return;
         } else {
             try {
-                const res = await axios.post(`http://localhost:3000/doctor/login`, {
+                const res = await axios.post(`http://localhost:3001/doctor/login`, {
                     username,
                     password,
                 });
