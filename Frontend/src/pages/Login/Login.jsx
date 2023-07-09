@@ -50,7 +50,7 @@ const Login = () => {
                 // If the login request is successful, show a success toast message
                 toast.success("User logged in successfully!");
                 // Navigate to the profile page
-                navigate("/");
+                window.location.href="/"
             } catch (error) {
                 console.log(error);
                 if (

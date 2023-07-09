@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+.profile-main {
+    display: flex;
+}
+
+.profile-left-panel {
+    width: 20vw;
+    height: 88.5vh;
+    padding: 0 8px;
+}
+
+.pbtn {
+    margin-top: 10px;
+    display: flex;
+    width: 100%;
+    align-items: center;
+
+    padding: 5px 13px;
+    border-radius: 6px;
+    color: #2e2e2e;
+    font-weight: 700;
+}
+
+.pbtn:hover {
+    background-color: rgba(137, 165, 243, 0.2);
+    color: rgb(63, 63, 222);
+}
+
+.active {
+    background-color: rgba(137, 165, 243, 0.2);
+    color: rgb(42, 42, 112);
+}
+
+.profile-right-pannel {
+    display: flex;
+    width: 80vw;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile img {
+    width: 25%;
+}
+
+.name {
+    margin-top: 10px;
+}
+
+.right-container {
+    padding: 40px;
+    width: 100%;
+    border-radius: 20px;
+    -webkit-box-shadow: -3px -3px 6px 0px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: -3px -3px 6px 0px rgba(0, 0, 0, 0.23);
+    box-shadow: -3px -3px 6px 0px rgba(0, 0, 0, 0.23);
+}
+
+.personal-info>h2,
+.schedule-info>h2 {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+hr {
+    border: none;
+    /* Remove the default border */
+    background-color: #cccccc;
+    /* Change the color to blue */
+    height: 1.5px;
+    /* Set the initial height */
+    margin: 10px 0;
+    /* Add some margin for spacing */
+    transition: height 0.3s;
+    /* Add a smooth transition effect */
+}
+
+.personal-info-container,
+.schedule-info-container {
+    display: flex;
+    width: 100%;
+    gap: 20px;
+}
+
+.personal-info-text,
+.schedule-info-text {
+    width: 30%;
+    font-size: 13px;
+    padding-right: 70px;
+    margin-top: 15px;
+}
+
+.personal-field,
+.schedule-field {
+    width: 55%;
+}
+
+.personal-info-field {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.personal-info-field input,
+.schedule_detail input {
+    flex: 1;
+    margin-right: 10px;
+    border: 1px solid #9f9f9f;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 10px 5px;
+    background-color: #e4e4e4;
+}
+
+.save_edit {
+    background-color: rgb(165, 204, 255);
+
+    padding: 5px 15px;
+    border-radius: 5px;
+}
+
+.save_edit_container {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.schedule-info-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.schedule_detail {
+    margin-bottom: 40px;
+    background-color: #b8b8b8;
+    padding: 10px;
+
+    border-radius: 5px;
+}
+
+.profile_date_time {
+    display: flex;
+    gap: 20px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+
+    font-family: "Roboto", sans-serif;
+}
+
+.user-info__img img {
+    margin-right: 15px;
+    height: 55px;
+    width: 55px;
+    border-radius: 45px;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+a {
+    text-decoration: none !important;
+}
+
+.profile_span {
+    color: red;
+}
+
+.card-hr {
+    color: blue;
+    margin: 0.5rem 0;
+}
+
+.fa-margin {
+    margin-right: 0.5rem;
+}
+
+.join-room-btn {
+    background-color: transparent !important;
+}
+
+.join-room-btn:hover {
+    background-color: rgba(128, 128, 128, 0.43) !important;
+    font-weight: 600;
+}

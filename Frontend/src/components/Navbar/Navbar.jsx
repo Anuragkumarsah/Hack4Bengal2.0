@@ -32,13 +32,14 @@ const Navbar = () => {
     const [isLogin, setIsLogin] = useState(false);
     const token = localStorage.getItem("doctor_ai_userID");
     useEffect(() => {
+        
         console.log(token);
         if (token) {
             setIsLogin(true);
         } else {
             setIsLogin(false);
         }
-    }, [token]);
+    }, []);
 
     const handleOutsideClick = (event) => {
         if (!event.target.closest('.services')) {
