@@ -103,8 +103,8 @@
 }
 .me .chat {
   display: flex;
-  align-items: center;
-  margin-right: 10px;
+  align-items: start;
+  margin-left: 10px;
 }
 .me svg {
   margin-left: 8px;
