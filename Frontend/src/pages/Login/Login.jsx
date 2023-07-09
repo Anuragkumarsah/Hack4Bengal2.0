@@ -12,7 +12,6 @@ const Login = () => {
             <div className="left-section">
                 <img
                     className="image"
-                    // src="./Image/doctors.gif"
                     src={LoginImg}
                     alt="Image"
                 />
