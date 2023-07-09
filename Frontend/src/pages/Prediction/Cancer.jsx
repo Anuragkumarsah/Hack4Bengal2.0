@@ -1,7 +1,7 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { useDropzone } from "react-dropzone";
 import axios from "axios";
-import './prediction.css'
+import "./prediction.css";
 import { Link } from "react-router-dom";
 import Modal from "../../components/Modal/Modal";
 import Progress_bar from "../../components/ProgressBar/ProgressBar";
@@ -10,6 +10,7 @@ import videoSrc from "../../Videos/ctscan_video.mp4";
 // Icon import
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import Chat from "../../components/Chat/Chat";
 
 function Cancer() {
   // fileupload & Result
@@ -29,7 +30,6 @@ function Cancer() {
     if (selectedFile != null) setLoading(true);
   }, [selectedFile]);
 
-
   // Drag and Drop
   const onDrop = useCallback((acceptedFiles) => {
     setSelectedFile(acceptedFiles[0]);
@@ -42,6 +42,21 @@ function Cancer() {
   });
   return (
     <div>
+      <div className="chat_header_text">
+        <h2>
+          AI Health Assistant for <span className="text-red-500">Cancer</span>{" "}
+          realated Queries
+        </h2>
+        <p>
+          <FontAwesomeIcon
+            icon={faTriangleExclamation}
+            className="fa-margin"
+            style={{ color: "red" }}
+          />
+          Doctor.AI Health Assistant is for informational purposes only. Don’t
+          take any actions without a doctor’s validation or consultation.
+        </p>
+      </div>
       <div
         className="main-container flex items-center justify-center overflow-x-clip"
         style={{ height: "90vh" }}
@@ -78,8 +93,9 @@ function Cancer() {
                     <input {...getInputProps()} />
 
                     <div
-                      className={`right-container-drop  w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl ${isDraggingOver ? "right-container-drag" : ""
-                        }`}
+                      className={`right-container-drop  w-full flex flex-col sm:justify-center sm:items-center sm:gap-8 sm:pt-36 sm:pb-16 rounded-4xl bg-white shadow-2xl ${
+                        isDraggingOver ? "right-container-drag" : ""
+                      }`}
                     >
                       <button type="button" className="upload-btn">
                         Upload Image
@@ -122,6 +138,10 @@ function Cancer() {
             percentage={`${Math.round(result.probability)}`}
           />
         ) : null}
+      </div>
+      <hr />
+      <div>
+        <Chat />
       </div>
     </div>
   );
