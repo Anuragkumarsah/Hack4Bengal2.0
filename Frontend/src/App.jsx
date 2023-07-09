@@ -8,6 +8,7 @@ import Chat from "./components/Chat/Chat";
 import Braintumer from "./pages/Prediction/Braintumer";
 import Login from './pages/Login/Login'
 import Signup from './pages/Signup/Signup'
+import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/prediction/cancer" element={<Cancer />} />
         <Route path="/prediction/brain-tumor" element={<Braintumer />} />
         <Route path="/general/chat" element={<Chat />} />
+        <Route path="/profile" element={<ProfilePage/>} />
       </Routes>
     </Router>
   );
