@@ -2,17 +2,15 @@ import "./Home.css";
 
 import { Link } from "react-router-dom";
 
-
 import FAQSection from "./../../components/FAQSection/FAQSection.jsx";
-
 
 import faqData from "./../../assets/json-data/faqData.json";
 
-
 import services_menu from "./../../assets/json-data/services_menu.json";
-import heroImage from "./../../assets/Images/doctor-hero.svg"
+import heroImage from "./../../assets/Images/doctor-hero.svg";
 import waveImg from "./../../assets/Images/wave.svg";
 import gif from "./../../assets/Images/doctor-application.gif";
+import Chat from "../../components/Chat/Chat";
 
 const Home = () => {
   return (
@@ -40,25 +38,29 @@ const Home = () => {
         <div className="modelSection">
           {/* Models */}
           <div>
-          <p>
-            <span>Health At Your FingerTips.</span> <br /> Check your health
-            with our latest AI Technology
-          </p>
-          <img src={gif} className="gifimg" /></div>
+            <p>
+              <span>Health At Your FingerTips.</span> <br /> Check your health
+              with our latest AI Technology
+            </p>
+            <img src={gif} className="gifimg" />
+          </div>
           <div className="models">
             {services_menu.items.map((item, index) => {
               if (index !== services_menu.items.length - 1) {
                 return (
                   <button key={index} className="CtScan">
-                  <img src={item.src} />
-                  <p>{item.title}</p>
-                </button>
+                    <img src={item.src} />
+                    <p>{item.title}</p>
+                  </button>
                 );
               }
             })}
           </div>
         </div>
         <hr />
+        <div>
+          <Chat />
+        </div>
         <div className="bottomBody">
           {/* About */}
           <div className="faq">
