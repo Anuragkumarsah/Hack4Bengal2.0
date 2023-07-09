@@ -58,7 +58,7 @@ const Home = () => {
           </div>
         </div>
         <hr />
-        <div>
+        <div className="chat_container">
           <Chat />
         </div>
         <div className="bottomBody">
