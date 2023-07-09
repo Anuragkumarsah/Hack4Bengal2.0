@@ -1,0 +1,155 @@
+.footer {
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .docAI_logo {
+    display: flex;
+    flex-direction: column;
+  }
+  .docAI_logo img {
+    width: 200px;
+    height: 200px;
+    margin-top: -50px;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+
+    /* justify-content: space-between; */
+    margin-top: 20px;
+  }
+  
+  .docAI_logo >  p {
+    margin-top: -50px;
+    font-size: 16px;
+    font-weight: 600;
+    word-wrap: break-word;
+    white-space: wrap;
+  }
+
+  .contact {
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+    margin-top: 50px;
+  }
+  
+  .contact > p {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: #777777;
+  }
+
+  .join-doctor {
+    color: #777777;
+    /* border: #777777 2px solid; */
+    border-radius: 10px;
+    padding: 5px;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .footer-hr {
+    width: 80%;
+    border: #7777775a 1px solid;
+  }
+
+  .join-doctor:hover {
+    color: #2a2828;
+    /* border-color: #2a2828; */
+    cursor: pointer;
+  }
+  
+  .product-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .product-list label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #777777;
+    margin-bottom: 5px;
+  }
+  
+  .product-link {
+    font-size: 14px;
+    color: #777777;
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 0;
+  }
+  
+  .product-link:hover {
+    color: #016cff;
+  } 
+
+  /* .social-media  */
+
+  .social-media {
+    margin-left: 50px;
+  }
+
+  .social-media > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .social-media > ul > li{
+    padding: 5px 5px 5px 0;
+  }
+
+  .social-media > ul > li > a {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    color: #777777;
+    text-decoration: none;
+  }
+
+  .social-media > label {
+    font-size: 16px;
+    font-weight: 600;
+    color: #777777;
+    margin-bottom: 5px;
+  }
+
+  .social-icons {
+    font-size: 20px;
+  }
+
+  .social-media > ul > li:hover, .social-media > ul > li > a:hover {
+    color: #016cff;
+  }
+  
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .content {
+      margin-top: 15px;
+      margin-bottom: 20px;
+      justify-content: space-between;
+    }
+  
+    .social-media {
+      justify-content: flex-start;
+    }
+  }
+  

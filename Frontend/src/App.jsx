@@ -8,6 +8,7 @@ import Cancer from "./pages/Prediction/Cancer";
 import Chat from "./components/Chat/Chat";
 import Login from './pages/Login/Login'
 import Signup from './pages/Signup/Signup'
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/prediction/cancer" element={<Cancer />} />
         <Route path="/general/chat" element={<Chat />} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }
