@@ -31,6 +31,7 @@
   .toggle-icon {
     font-weight: bold;
     margin-left: 10px;
+    transition: transform 300ms ease-in-out;
   }
   
   .faq-answer {

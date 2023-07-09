@@ -8,6 +8,7 @@ import Chat from "./components/Chat/Chat";
 import Braintumer from "./pages/Prediction/Braintumer";
 import Login from './pages/Login/Login'
 import Signup from './pages/Signup/Signup'
+import Footer from "./components/Footer/Footer";
 import ProfilePage from "./pages/ProfilePage/ProfilePage";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/general/chat" element={<Chat />} />
         <Route path="/profile" element={<ProfilePage/>} />
       </Routes>
+      <Footer/>
     </Router>
   );
 }

@@ -3,7 +3,7 @@ import { useEffect, useState, useRef } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTriangleExclamation,faPaperPlane } from "@fortawesome/free-solid-svg-icons";
+import { faTriangleExclamation,faPaperPlane, faTrash } from "@fortawesome/free-solid-svg-icons";
 
 function Chat() {
   const [input, setInput] = useState();
@@ -107,20 +107,7 @@ function Chat() {
         <aside className="left-panel">
           <button className="btnChat" onClick={clearChat}>
             {/* Plus svg */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="w-6 h-6 svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M12 4.5v15m7.5-7.5h-15"
-              />
-            </svg>
+            <FontAwesomeIcon className="m-6 h-6" icon={faTrash} />
             Clear Chat
           </button>
           <Link
