@@ -20,9 +20,9 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/prediction/adeno" element={<Adeno />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/prediction/brain-tumor" element={<Braintumer />} />
+        <Route path="/prediction/carcinoma" element={<Adeno />} />
+        <Route path="/prediction/braintumor" element={<Braintumer />} />
         <Route path="/prediction/pneumonia" element={<Pneumonia />} />
         <Route path="/prediction/cancer" element={<Cancer />} />
         <Route path="/general/chat" element={<Chat />} />
