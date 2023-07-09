@@ -110,7 +110,7 @@ const Appointment = () => {
         }
 
         try {
-            const response = await axios.post(appointmentRoute, {
+            const response = await axios.post(`http://localhost:3001/appointment`, {
                 doctorId: doctorID,
                 clientId: userID,
                 timeOfAppointment: time,
