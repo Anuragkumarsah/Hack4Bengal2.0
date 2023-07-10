@@ -17,14 +17,29 @@
 <h1> Some features of our platform </h1>
 
 - [Models](#Models)
+<br/>
+<br/>
+
   ### [Cancer](#cancer)
     ![Cancer](https://i.imgur.com/NbTta3p.png)
+<br/>
+<br/>
+
   ### [Brain Tumor](#brain_tumor)
     ![Brain Tumor](https://i.imgur.com/hhmZult.png)
+<br/>
+<br/>
+
   ### [Carcinoma](#Carcinoma)
     ![Carcinoma](https://i.imgur.com/LkkBtXv.png)
+<br/>
+<br/>
+
   ### [Pneumonia](#Carcinoma)
     ![Carcinoma](https://i.imgur.com/SFbvIjl.png)
+<br/>
+<br/>
+
   ### [General Chat](#General Chat)
     ![General Chat](https://i.imgur.com/mNZWR9i.png)
 
