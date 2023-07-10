@@ -18,15 +18,15 @@
 
 - [Models](#Models)
   ### [Cancer](#cancer)
-        ![Cancer](https://i.imgur.com/NbTta3p.png)
+    ![Cancer](https://i.imgur.com/NbTta3p.png)
   ### [Brain Tumor](#brain_tumor)
-        ![Brain Tumor](https://i.imgur.com/hhmZult.png)
+    ![Brain Tumor](https://i.imgur.com/hhmZult.png)
   ### [Carcinoma](#Carcinoma)
-        ![Carcinoma](https://i.imgur.com/LkkBtXv.png)
+    ![Carcinoma](https://i.imgur.com/LkkBtXv.png)
   ### [Pneumonia](#Carcinoma)
-        ![Carcinoma](https://i.imgur.com/SFbvIjl.png)
+    ![Carcinoma](https://i.imgur.com/SFbvIjl.png)
   ### [General Chat](#General Chat)
-        ![General Chat](https://i.imgur.com/mNZWR9i.png)
+    ![General Chat](https://i.imgur.com/mNZWR9i.png)
 
 
 ## Installation
