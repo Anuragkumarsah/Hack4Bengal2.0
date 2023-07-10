@@ -76,8 +76,7 @@ export default function ProfilePage() {
   };
 
   const handleJoin = (item) => {
-    console.log(item._id);
-    localStorage.setItem("doctorAI_pop_up", "1");
+    localStorage.setItem("doctorAI_pop_up", item._id);
   };
 
   useEffect(() => {

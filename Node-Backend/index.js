@@ -15,7 +15,6 @@ mongoose
   .connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    bufferCommands: false,
   })
   .then(() => {
     console.log("MongoDB connected");
@@ -399,6 +398,27 @@ app.post("/completion", async (req, res) => {
   }
 });
 
+app.post("/user/review", async (req, res) => {
+  try {
+    const { rating, review, appointmentId } = req.body;
+    const appointment = await Appointment.findById(appointmentId);
+    const docId = appointment.doctorId;
+    const doctor = await Doctor.findById(docId);
+    if (doctor) {
+      const oldRating = doctor.feedback.rating;
+      const newRating = (oldRating + rating) / (doctor.feedback.count + 1);
+      doctor.feedback.rating = newRating;
+      doctor.feedback.count = doctor.feedback.count + 1;
+      doctor.feedback.review.push(review);
+      await doctor.save();
+      res.status(200).json({ message: "Review added successfully" });
+    } else {
+      res.status(404).json({ message: "Something wrong here" });
+    }
+  } catch (error) {
+    console.error("Some error occured", error);
+  }
+});
 // Start the server
 const port = 3001; // Choose any port you prefer
 app.listen(port, () => {
