@@ -8,7 +8,7 @@
         },
         {
             "className":"fa-solid fa-brain-circuit",
-            "title": "Brain Tumer Prediction",
+            "title": "Brain Tumor Prediction",
             "url": "/prediction/braintumor",
             "src": "/src/assets/Images/brainTumor.png"
         },
