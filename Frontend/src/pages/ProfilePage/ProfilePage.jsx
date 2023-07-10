@@ -18,6 +18,7 @@ import {
   faFloppyDisk,
   faCircleInfo,
   faCalendarPlus,
+  faStar
 } from "@fortawesome/free-solid-svg-icons";
 import {
   appointmentDetails,
@@ -376,7 +377,7 @@ export default function ProfilePage() {
                               <h5 className="mb-0">{item.doctor.username}</h5>
                               <p className="text-muted mb-0">
                                 {calculateAge(item.doctor.dob)} yrs,{" "}
-                                {item.doctor.gender}
+                                {item.doctor.gender} {", "} {item.doctor.feedback.rating} {<FontAwesomeIcon icon={faStar} style={{color: "#ffcf66",}} />} 
                               </p>
                             </div>
                           </div>
