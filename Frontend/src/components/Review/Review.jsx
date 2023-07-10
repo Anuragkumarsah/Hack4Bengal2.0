@@ -9,6 +9,7 @@ import img from "../../assets/Images/RATING_POPUP.png";
 import { Button } from "bootstrap";
 import { FaStar } from "react-icons/fa";
 import axios from "axios";
+import { postUserReview } from "../../Utils/APIRoutes";
 
 const colors = {
   orange: "#FFBA5A",
@@ -35,7 +36,7 @@ export default function Review({ onClose, appointmentId }) {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post("https://doctorai-392406.uw.r.appspot.com/user/review", {
+      const response = await axios.post(postUserReview, {
         rating: currentValue,
         review: textValue,
         appointmentId: appointmentId,

@@ -18,6 +18,7 @@ import {
     faFloppyDisk,
 } from "@fortawesome/free-solid-svg-icons";
 import profileImage from '../../assets/Images/doctor.png'
+import { getDoctorDetailsRoute, appointmentDetails } from "../../Utils/APIRoutes";
 
 export default function DoctorDashboard() {
     const [userData, setUserData] = useState(null);
@@ -62,7 +63,7 @@ export default function DoctorDashboard() {
     const fetchDoctorData = async (userId) => {
         try {
             const response = await axios.get(
-                `https://doctorai-392406.uw.r.appspot.com/doctor/details/${userId}`
+                getDoctorDetailsRoute(userId)
             );
             setUserData(response.data);
             // console.log(response.data);
@@ -125,7 +126,7 @@ export default function DoctorDashboard() {
         try {
             setIsLoading(true);
             const response = await axios.get(
-                `https://doctorai-392406.uw.r.appspot.com/appointment/${appointmentId}`
+                appointmentDetails(appointmentId)
             );
             const appointment = response.data.appointment;
             const clientId = appointment.clientId;

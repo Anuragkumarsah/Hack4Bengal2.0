@@ -7,6 +7,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import DoctorSignupImage from "../../assets/Images/Doctors_signup.png"
+import { doctorSignupRoute } from "../../Utils/APIRoutes";
 
 const DoctorSignup = () => {
     const [state, setState] = useState({
@@ -90,26 +91,26 @@ const DoctorSignup = () => {
             toast.error("Please enter an email.");
             return false;
         }
-        // if (password.length < 8) {
-        //     toast.error('Password must be at least 8 characters long.');
-        //     return false;
-        // }
-        // if (!/[A-Z]/.test(password)) {
-        //     toast.error('Password must contain at least one uppercase letter.');
-        //     return false;
-        // }
-        // if (!/[a-z]/.test(password)) {
-        //     toast.error('Password must contain at least one lowercase letter.');
-        //     return false;
-        // }
-        // if (!/\d/.test(password)) {
-        //     toast.error('Password must contain at least one digit.');
-        //     return false;
-        // }
-        // if (!/[@#$%^&*]/.test(password)) {
-        //     toast.error('Password must contain at least one special character (@, #, $, %, ^, &, *).');
-        //     return false;
-        // }
+        if (password.length < 8) {
+            toast.error('Password must be at least 8 characters long.');
+            return false;
+        }
+        if (!/[A-Z]/.test(password)) {
+            toast.error('Password must contain at least one uppercase letter.');
+            return false;
+        }
+        if (!/[a-z]/.test(password)) {
+            toast.error('Password must contain at least one lowercase letter.');
+            return false;
+        }
+        if (!/\d/.test(password)) {
+            toast.error('Password must contain at least one digit.');
+            return false;
+        }
+        if (!/[@#$%^&*]/.test(password)) {
+            toast.error('Password must contain at least one special character (@, #, $, %, ^, &, *).');
+            return false;
+        }
         if (password !== confirmPassword) {
             toast.error("Passwords do not match.");
             return false;
@@ -126,7 +127,7 @@ const DoctorSignup = () => {
             const hashedPassword = await bcrypt.hash(password, 10);
             const specializationArray = convertSpecializations(specialization);
             await axios
-                .post(`https://doctorai-392406.uw.r.appspot.com/doctor/signup`, {
+                .post(doctorSignupRoute, {
                     username,
                     email,
                     phoneNumber,

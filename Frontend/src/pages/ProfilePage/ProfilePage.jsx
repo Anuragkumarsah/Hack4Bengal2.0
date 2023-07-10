@@ -23,6 +23,7 @@ import {
   appointmentDetails,
   deleteAppointmentRoute,
   getUserDataRoute,
+  getDoctorDetailsRoute
 } from "../../Utils/APIRoutes";
 
 import doctorPng from "../../assets/Images/doctor.png";
@@ -169,12 +170,12 @@ export default function ProfilePage() {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        `https://doctorai-392406.uw.r.appspot.com/appointment/${appointmentId}`
+        appointmentDetails(appointmentId)
       );
       const appointment = response.data.appointment;
       const doctorId = appointment.doctorId;
       const doctorDetail = await axios.get(
-        `https://doctorai-392406.uw.r.appspot.com/doctor/details/${doctorId}`
+        getDoctorDetailsRoute(doctorId)
       );
       const doc = doctorDetail.data;
       setSchedule((prev) => {
