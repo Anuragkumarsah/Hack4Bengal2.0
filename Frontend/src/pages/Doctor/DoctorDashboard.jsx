@@ -62,7 +62,7 @@ export default function DoctorDashboard() {
     const fetchDoctorData = async (userId) => {
         try {
             const response = await axios.get(
-                `http://localhost:3001/doctor/details/${userId}`
+                `https://doctorai-392406.uw.r.appspot.com/doctor/details/${userId}`
             );
             setUserData(response.data);
             // console.log(response.data);
@@ -89,7 +89,7 @@ export default function DoctorDashboard() {
         try {
             // Perform save operation or API call with editedData
             const response = await fetch(
-                `http://localhost:3001/user/${userData._id}`,
+                `https://doctorai-392406.uw.r.appspot.com/user/${userData._id}`,
                 {
                     method: "PUT",
                     headers: {
@@ -125,7 +125,7 @@ export default function DoctorDashboard() {
         try {
             setIsLoading(true);
             const response = await axios.get(
-                `http://localhost:3001/appointment/${appointmentId}`
+                `https://doctorai-392406.uw.r.appspot.com/appointment/${appointmentId}`
             );
             const appointment = response.data.appointment;
             const clientId = appointment.clientId;

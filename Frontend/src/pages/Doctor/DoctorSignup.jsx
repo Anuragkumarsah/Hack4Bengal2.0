@@ -126,7 +126,7 @@ const DoctorSignup = () => {
             const hashedPassword = await bcrypt.hash(password, 10);
             const specializationArray = convertSpecializations(specialization);
             await axios
-                .post(`http://localhost:3001/doctor/signup`, {
+                .post(`https://doctorai-392406.uw.r.appspot.com/doctor/signup`, {
                     username,
                     email,
                     phoneNumber,

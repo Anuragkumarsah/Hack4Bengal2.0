@@ -35,7 +35,7 @@ export default function Review({ onClose, appointmentId }) {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post("http://localhost:3001/user/review", {
+      const response = await axios.post("https://doctorai-392406.uw.r.appspot.com/user/review", {
         rating: currentValue,
         review: textValue,
         appointmentId: appointmentId,

@@ -80,7 +80,7 @@ const Appointment = () => {
 
     const fetchUserData = async (userId) => {
         try {
-            const response = await fetch(`http://localhost:3001/user/${userId}`);
+            const response = await fetch(`https://doctorai-392406.uw.r.appspot.com/user/${userId}`);
             const data = await response.json();
             if (response.ok) {
                 setUserData(data.user);
@@ -110,7 +110,7 @@ const Appointment = () => {
         }
 
         try {
-            const response = await axios.post(`http://localhost:3001/appointment`, {
+            const response = await axios.post(`https://doctorai-392406.uw.r.appspot.com/appointment`, {
                 doctorId: doctorID,
                 clientId: userID,
                 timeOfAppointment: time,
