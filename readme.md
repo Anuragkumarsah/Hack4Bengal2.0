@@ -12,14 +12,17 @@
 </p>
 
 > ### Note:
-> Api Credit : [Marouane](https://github.com/riimuru)
+> Contributors : Krisnendu Roy, Indrajit Pal, Anurag Kumar Sah
 
-<h1> Table of Contents </h1>
+<h1> Some features of our platform </h1>
 
-- [Installation](#installation)
-  - [Local](#local)
-  - [Docker](#docker)
-  - [Heroku](#heroku)
+- [Models](#Models)
+  - [Cancer](#cancer)
+  ![Cancer]("")
+  - [Brain Tumor](#brain_tumor)
+  - [Carcinoma](#Carcinoma)
+  - [Pneumonia](#Carcinoma)
+
 - [Routes](#routes)
   - [Get Recent Episodes](#get-recent-episodes)
   - [Get Popular Anime](#get-popular-anime)
