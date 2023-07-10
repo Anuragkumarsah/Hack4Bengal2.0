@@ -133,7 +133,7 @@ export default function ProfilePage() {
     try {
       // Perform save operation or API call with editedData
       const response = await fetch(
-        `http://localhost:3001/user/${userData._id}`,
+        `https://doctorai-392406.uw.r.appspot.com/user/${userData._id}`,
         {
           method: "PUT",
           headers: {
@@ -169,12 +169,12 @@ export default function ProfilePage() {
     try {
       setIsLoading(true);
       const response = await axios.get(
-        `http://localhost:3001/appointment/${appointmentId}`
+        `https://doctorai-392406.uw.r.appspot.com/appointment/${appointmentId}`
       );
       const appointment = response.data.appointment;
       const doctorId = appointment.doctorId;
       const doctorDetail = await axios.get(
-        `http://localhost:3001/doctor/details/${doctorId}`
+        `https://doctorai-392406.uw.r.appspot.com/doctor/details/${doctorId}`
       );
       const doc = doctorDetail.data;
       setSchedule((prev) => {

@@ -18,6 +18,8 @@ import DoctorSignup from "./pages/Doctor/DoctorSignup";
 import DoctorDashboard from "./pages/Doctor/DoctorDashboard";
 import Meet from "./pages/Meet/Meet";
 import Rooms from "./pages/Rooms/Rooms"
+import Contact from "./pages/ContactUs/Contact"
+import Error from "./components/404NotFound/Error"
 
 function App() {
   return (
@@ -39,6 +41,8 @@ function App() {
         <Route path="/doctor/dashboard" element={<DoctorDashboard/>} />
         <Route path="/meet" element={<Meet/>} />
         <Route path="/rooms/:roomId" element={<Rooms />} />
+        <Route path="/contact" element={<Contact/>} />
+        <Route path="*" element={<Error/>} />
       </Routes>
       <Footer />
     </Router>
