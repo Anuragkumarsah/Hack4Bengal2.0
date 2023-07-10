@@ -180,12 +180,16 @@
 
 .specialization-container {
     margin-left: 5px;
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .specialization-item {
     padding: 3px 5px;
     background-color: #61ace4;
-    margin: 0 3px;
+    margin: 3px 3px;
     font-weight: 500;
     border-radius: 5px;
 }
