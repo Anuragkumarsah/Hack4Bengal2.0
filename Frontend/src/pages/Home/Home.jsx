@@ -11,10 +11,30 @@ import heroImage from "./../../assets/Images/doctor-hero.svg";
 import waveImg from "./../../assets/Images/wave.svg";
 import gif from "./../../assets/Images/doctor-application.gif";
 import Chat from "../../components/Chat/Chat";
+import { useEffect, useState } from "react";
+import Review from "../../components/Review/Review";
 
 const Home = () => {
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [appointmentId, setAppointmentId] = useState(null);
+  useEffect(() => {
+    const appointmentId = localStorage.getItem("doctorAI_pop_up");
+    if (appointmentId) {
+      setAppointmentId(appointmentId);
+      setIsPopupOpen(true);
+    }
+  }, []);
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    localStorage.removeItem("doctorAI_pop_up");
+  };
+
   return (
     <>
+      {isPopupOpen && (
+        <Review onClose={closePopup} appointmentId={appointmentId} />
+      )}
       <div className="home">
         {/* Top Body */}
         <div className="topBody_container">

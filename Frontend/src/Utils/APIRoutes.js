@@ -12,3 +12,4 @@ export const appointmentDetails = (id) => `${host}/appointment/${id}`;
 export const deleteAppointmentRoute = (id) => `${host}/appointment/delete/${id}`
 
 export const doctorDetailsRoute = `${host}/doctor/details`
+export const getDoctorDetailsRoute = (id) => `${host}/doctor.details/${id}`
