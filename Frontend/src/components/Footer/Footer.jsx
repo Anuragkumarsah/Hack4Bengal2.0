@@ -9,6 +9,8 @@ import {
   faInstagram,
 } from "@fortawesome/free-brands-svg-icons";
 
+import services_menu from "../../assets/json-data/services_menu.json";
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -41,21 +43,13 @@ const Footer = () => {
             {/* Product List */}
             <label htmlFor="Products">Products</label>
             <ul id="Products">
-              <li>
-                <Link className="product-link" to="/prediction/ctscan">
-                  CT-Scan
-                </Link>
-              </li>
-              <li>
-                <Link className="product-link" to="/prediction/mri">
-                  MRI-Scan
-                </Link>
-              </li>
-              <li>
-                <Link className="product-link" to="/prediction/xray">
-                  Lungs-X-Ray
-                </Link>
-              </li>
+              {services_menu.items.map((item, index) => (
+                  <li key={index}>
+                  <Link className="product-link" to={item.url}>
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
