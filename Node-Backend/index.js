@@ -15,7 +15,6 @@ mongoose
   .connect(DB, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    bufferCommands: false,
   })
   .then(() => {
     console.log("MongoDB connected");
@@ -25,8 +24,8 @@ mongoose
   });
 
 const User = require("./Models/UsersModel");
-const Doctor = require("./Models/DoctorModel")
-const Appointment = require("./Models/AppointmentModel")
+const Doctor = require("./Models/DoctorModel");
+const Appointment = require("./Models/AppointmentModel");
 
 // Routes
 app.get("/", (req, res) => {
@@ -35,7 +34,6 @@ app.get("/", (req, res) => {
 
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
-  console.log(req.body); // Logging the entire request body
 
   try {
     // Find the user in the database by username
@@ -66,7 +64,6 @@ app.post("/login", async (req, res) => {
 
 app.post("/signup", async (req, res) => {
   const { username, email, phoneNumber, gender, dob, password } = req.body;
-  console.log(req.body); // Logging the entire request body
 
   try {
     // Check if the email already exists in the database
@@ -210,7 +207,6 @@ const generateMeetingCode = () => {
 };
 
 app.post("/appointment", async (req, res) => {
-  console.log("This is appointment page backend");
   const { doctorId, clientId, timeOfAppointment, dateOfAppointment, about } =
     req.body;
 
@@ -227,7 +223,6 @@ app.post("/appointment", async (req, res) => {
 
     // Save the new user to the database
     const result = await newAppointment.save();
-    // console.log(result)
     const appointmentId = result._id;
     const user = await User.findById(clientId);
     if (!user) {
@@ -284,7 +279,6 @@ app.post("/doctor/signup", async (req, res) => {
   } = req.body;
 
   try {
-    // console.log(email);
     const existingUser = await Doctor.findOne({ email });
 
     if (existingUser) {
@@ -404,6 +398,27 @@ app.post("/completion", async (req, res) => {
   }
 });
 
+app.post("/user/review", async (req, res) => {
+  try {
+    const { rating, review, appointmentId } = req.body;
+    const appointment = await Appointment.findById(appointmentId);
+    const docId = appointment.doctorId;
+    const doctor = await Doctor.findById(docId);
+    if (doctor) {
+      const oldRating = doctor.feedback.rating;
+      const newRating = (oldRating + rating) / (doctor.feedback.count + 1);
+      doctor.feedback.rating = newRating;
+      doctor.feedback.count = doctor.feedback.count + 1;
+      doctor.feedback.review.push(review);
+      await doctor.save();
+      res.status(200).json({ message: "Review added successfully" });
+    } else {
+      res.status(404).json({ message: "Something wrong here" });
+    }
+  } catch (error) {
+    console.error("Some error occured", error);
+  }
+});
 // Start the server
 const port = 3001; // Choose any port you prefer
 app.listen(port, () => {
