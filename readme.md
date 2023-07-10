@@ -21,7 +21,7 @@
 <br/>
 
   ### [Cancer](#cancer)
-    ![Cancer](https://i.imgur.com/NbTta3p.png)
+![Cancer](https://i.imgur.com/NbTta3p.png)
 <br/>
 <br/>
 
