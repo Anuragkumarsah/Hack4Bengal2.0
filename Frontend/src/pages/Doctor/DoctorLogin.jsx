@@ -31,7 +31,7 @@ const DoctorLogin = () => {
             return;
         } else {
             try {
-                const res = await axios.post(`https://doctorai-392406.uw.r.appspot.com/doctor/login`, {
+                const res = await axios.post(doctorLoginRoute, {
                     username,
                     password,
                 });

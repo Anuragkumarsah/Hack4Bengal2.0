@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "../Appointment/Appointment.css";
 import axios from "axios";
 import { useLocation, useNavigate } from "react-router-dom";
-import { doctorDetailsRoute, appointmentRoute } from '../../Utils/APIRoutes'
+import { doctorDetailsRoute, appointmentRoute, getUserDataRoute} from '../../Utils/APIRoutes'
 import profileImage from "../../assets/Images/profile.png"
 import doctorImage from "../../assets/Images/doctor.png"
 
@@ -80,7 +80,7 @@ const Appointment = () => {
 
     const fetchUserData = async (userId) => {
         try {
-            const response = await fetch(`https://doctorai-392406.uw.r.appspot.com/user/${userId}`);
+            const response = await fetch(getUserDataRoute(userId));
             const data = await response.json();
             if (response.ok) {
                 setUserData(data.user);
@@ -110,7 +110,7 @@ const Appointment = () => {
         }
 
         try {
-            const response = await axios.post(`https://doctorai-392406.uw.r.appspot.com/appointment`, {
+            const response = await axios.post(appointmentRoute, {
                 doctorId: doctorID,
                 clientId: userID,
                 timeOfAppointment: time,
