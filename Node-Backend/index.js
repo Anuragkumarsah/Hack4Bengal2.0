@@ -25,8 +25,8 @@ mongoose
   });
 
 const User = require("./Models/UsersModel");
-const Doctor = require("./Models/DoctorModel")
-const Appointment = require("./Models/AppointmentModel")
+const Doctor = require("./Models/DoctorModel");
+const Appointment = require("./Models/AppointmentModel");
 
 // Routes
 app.get("/", (req, res) => {
@@ -35,7 +35,6 @@ app.get("/", (req, res) => {
 
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
-  console.log(req.body); // Logging the entire request body
 
   try {
     // Find the user in the database by username
@@ -66,7 +65,6 @@ app.post("/login", async (req, res) => {
 
 app.post("/signup", async (req, res) => {
   const { username, email, phoneNumber, gender, dob, password } = req.body;
-  console.log(req.body); // Logging the entire request body
 
   try {
     // Check if the email already exists in the database
@@ -210,7 +208,6 @@ const generateMeetingCode = () => {
 };
 
 app.post("/appointment", async (req, res) => {
-  console.log("This is appointment page backend");
   const { doctorId, clientId, timeOfAppointment, dateOfAppointment, about } =
     req.body;
 
@@ -227,7 +224,6 @@ app.post("/appointment", async (req, res) => {
 
     // Save the new user to the database
     const result = await newAppointment.save();
-    // console.log(result)
     const appointmentId = result._id;
     const user = await User.findById(clientId);
     if (!user) {
@@ -284,7 +280,6 @@ app.post("/doctor/signup", async (req, res) => {
   } = req.body;
 
   try {
-    // console.log(email);
     const existingUser = await Doctor.findOne({ email });
 
     if (existingUser) {
