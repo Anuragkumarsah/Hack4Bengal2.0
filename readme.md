@@ -17,7 +17,7 @@
 <h1> Some features of our platform </h1>
 
 - [Models](#Models)
-  - [Cancer](#cancer)
+  - [Cancer](#cancer
   ![Cancer](https://i.imgur.com/NbTta3p.png)
   - [Brain Tumor](#brain_tumor)
     ![Brain Tumor](https://i.imgur.com/hhmZult.png)
