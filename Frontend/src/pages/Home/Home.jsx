@@ -1,6 +1,6 @@
 import "./Home.css";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import FAQSection from "./../../components/FAQSection/FAQSection.jsx";
 
@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import Review from "../../components/Review/Review";
 
 const Home = () => {
+  const navigate = useNavigate();
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [appointmentId, setAppointmentId] = useState(null);
   useEffect(() => {
@@ -29,6 +30,10 @@ const Home = () => {
     setIsPopupOpen(false);
     localStorage.removeItem("doctorAI_pop_up");
   };
+
+  const navigateTo = (url) => {
+    navigate(url);
+  }
 
   return (
     <>
@@ -68,7 +73,7 @@ const Home = () => {
             {services_menu.items.map((item, index) => {
               if (index !== services_menu.items.length - 1) {
                 return (
-                  <button key={index} className="CtScan">
+                  <button key={index} className="CtScan" onClick={() => navigateTo(item.url)}>
                     <img src={item.src} />
                     <p>{item.title}</p>
                   </button>
