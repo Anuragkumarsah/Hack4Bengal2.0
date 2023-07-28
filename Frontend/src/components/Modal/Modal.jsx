@@ -55,7 +55,7 @@ export default function Modal({
                 onClick={onClose}
                 to="/appointment"
                 state={{
-                  about: `Issue ${bigText}, prediction ${percentage}%. We need doctor's assistance.`,
+                  about: `Paitent's disease type is expected to be: ${bigText}, with an accuracy of ${percentage}%. The reports link are given below.`,
                 }}
               >
                 Appointment
