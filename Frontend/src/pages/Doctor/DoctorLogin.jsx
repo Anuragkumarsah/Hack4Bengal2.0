@@ -9,6 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 
 import docLoginImage from '../../assets/Images/DoctorLogin.png'
 
+import { doctorLoginRoute } from "../../Utils/APIRoutes";
+
 const DoctorLogin = () => {
     const navigate = useNavigate();
     const [username, setUsername] = useState("");

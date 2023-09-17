@@ -18,6 +18,7 @@ import {
     faFloppyDisk,
 } from "@fortawesome/free-solid-svg-icons";
 import profileImage from '../../assets/Images/doctor.png'
+import userProfileImage from "../../assets/Images/profile.png"
 import { getDoctorDetailsRoute, appointmentDetails } from "../../Utils/APIRoutes";
 
 export default function DoctorDashboard() {
@@ -322,7 +323,7 @@ export default function DoctorDashboard() {
                                                     <div className="user-info">
                                                         <div className="user-info__img">
                                                             <img
-                                                                src="/Image/profile.png"
+                                                                src={userProfileImage}
                                                                 alt="profile Img"
                                                                 width="30"
                                                             />
